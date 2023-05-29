@@ -1,1 +1,2 @@
-console.log('Im here');
+const test: string = 'Manuel'
+console.log(test)
