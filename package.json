@@ -1,0 +1,19 @@
+{
+  "name": "hexagonal-architecture-typescript-example",
+  "version": "1.0.0",
+  "description": "architecture hexagonal typescript example",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "ddd"
+  ],
+  "author": "manuelhra.deb@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "typescript": "^5.0.4"
+  }
+}
