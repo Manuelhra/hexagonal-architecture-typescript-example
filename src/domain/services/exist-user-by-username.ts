@@ -1,5 +1,5 @@
-import { type User } from 'domain/entities/user'
-import { type UserRepository } from 'domain/repositories/user-repository'
+import { type User } from '../../domain/entities/user'
+import { type UserRepository } from '../../domain/repositories/user-repository'
 
 export class ExistUserByUsername {
   constructor (private readonly userRepository: UserRepository) {}

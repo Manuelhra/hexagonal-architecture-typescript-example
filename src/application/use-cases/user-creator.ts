@@ -1,7 +1,7 @@
-import { type User } from 'domain/entities/user'
-import { UserAlreadyExistsException } from 'domain/exceptions/user-already-exists-exception'
-import { type UserRepository } from 'domain/repositories/user-repository'
-import { type ExistUserByUsername } from 'domain/services/exist-user-by-username'
+import { type User } from '../../domain/entities/user'
+import { UserAlreadyExistsException } from '../../domain/exceptions/user-already-exists-exception'
+import { type UserRepository } from '../../domain/repositories/user-repository'
+import { type ExistUserByUsername } from '../../domain/services/exist-user-by-username'
 
 export class UserCreatorUseCase {
   constructor (

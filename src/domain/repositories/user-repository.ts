@@ -1,4 +1,4 @@
-import { type User } from 'domain/entities/user'
+import { type User } from '../../domain/entities/user'
 
 export interface UserRepository {
   getUsers: () => Promise<User[]>
