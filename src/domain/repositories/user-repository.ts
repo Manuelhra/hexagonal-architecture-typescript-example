@@ -2,7 +2,7 @@ import { type User } from 'domain/entities/user'
 
 export interface UserRepository {
   getUsers: () => Promise<User[]>
-  save: () => Promise<User>
+  save: (user: User) => Promise<User>
   getByUsername: (username: string) => Promise<User | null>
   update: (user: User) => Promise<User>
   delete: (user: User) => Promise<void>
