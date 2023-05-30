@@ -2,7 +2,7 @@ import { User } from '../../../domain/entities/user'
 import { type UserRepository } from '../../../domain/repositories/user-repository'
 
 export class InMemoryUserRepository implements UserRepository {
-  private readonly users: User[] = []
+  private users: User[] = []
 
   async getUsers (): Promise<User[]> {
     return this.users
@@ -11,7 +11,7 @@ export class InMemoryUserRepository implements UserRepository {
   async save (user: User): Promise<User> {
     this.users.push(user)
 
-    return user
+    return new User(user.id, user.name, user.username, user.age)
   }
 
   async getByUsername (username: string): Promise<User | null> {
@@ -24,6 +24,10 @@ export class InMemoryUserRepository implements UserRepository {
   }
 
   async update (user: User): Promise<User> {
+    const newList: User[] = this.users.filter((e) => e.id !== user.id)
+    newList.push(user)
+    this.users = newList
+
     return new User(user.id, user.name, user.username, user.age)
   }
 

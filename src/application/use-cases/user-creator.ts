@@ -2,6 +2,7 @@ import { type User } from '../../domain/entities/user'
 import { UserAlreadyExistsException } from '../../domain/exceptions/user-already-exists-exception'
 import { type UserRepository } from '../../domain/repositories/user-repository'
 import { type ExistUserByUsername } from '../../domain/services/exist-user-by-username'
+import { type CreateUserDTO } from '../dtos/create-user-dto'
 
 export class UserCreatorUseCase {
   constructor (
@@ -9,7 +10,7 @@ export class UserCreatorUseCase {
     private readonly existUserByUsername: ExistUserByUsername
   ) {}
 
-  async run (body: User): Promise<User> {
+  async run (body: CreateUserDTO): Promise<User> {
     const existUser: boolean = await this.existUserByUsername.run(body.username)
 
     if (existUser) throw new UserAlreadyExistsException()
