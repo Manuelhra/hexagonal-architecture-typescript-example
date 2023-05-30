@@ -5,7 +5,7 @@
   "main": "src/main.ts",
   "scripts": {
     "dev": "ts-node-dev src/main.ts",
-    "console-application": "ts-node-dev src/infrastructure/driving-adapters/console/console.ts",
+    "start-console-application": "ts-node-dev src/infrastructure/driving-adapters/console/console.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
