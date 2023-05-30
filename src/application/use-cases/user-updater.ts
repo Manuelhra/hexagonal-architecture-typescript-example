@@ -1,4 +1,4 @@
-import { UserNotFoundException } from '../../domain/exceptions/user-already-exists-exception'
+import { UserNotFoundException } from '../../domain/exceptions/user-not-found-exception'
 import { type UserRepository } from '../../domain/repositories/user-repository'
 import { type UserGetterById } from '../../domain/services/user-getter-by-id'
 import { type User } from '../../domain/entities/user'
