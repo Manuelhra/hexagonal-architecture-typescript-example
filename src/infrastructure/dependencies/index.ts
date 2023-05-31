@@ -1,4 +1,5 @@
 import { UserCreatorUseCase } from '../../application/use-cases/user-creator'
+import { UserDeleterUseCase } from '../../application/use-cases/user-deleter'
 import { UserGetterUseCase } from '../../application/use-cases/user-getter'
 import { UserUpdaterUserCase } from '../../application/use-cases/user-updater'
 import { ExistUserByUsername } from '../../domain/services/exist-user-by-username'
@@ -11,3 +12,4 @@ export const existUserByUsername = new ExistUserByUsername(inMemoryUserRepositor
 export const userCreatorUseCase = new UserCreatorUseCase(inMemoryUserRepository, existUserByUsername)
 export const userGetterUserCase = new UserGetterUseCase(inMemoryUserRepository)
 export const userUpdaterUserCase = new UserUpdaterUserCase(inMemoryUserRepository, userGetterById)
+export const userDeleterUseCase = new UserDeleterUseCase(inMemoryUserRepository, userGetterById)

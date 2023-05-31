@@ -2,7 +2,7 @@ import { type CreateUserDTO } from '../../../application/dtos/create-user-dto'
 import { type UpdateUserDTO } from '../../../application/dtos/update-user-dto'
 import { type User } from '../../../domain/entities/user'
 import { UserAlreadyExistsException } from '../../../domain/exceptions/user-already-exists-exception'
-import { userCreatorUseCase, userGetterUserCase, userUpdaterUserCase } from '../../../infrastructure/dependencies'
+import { userCreatorUseCase, userDeleterUseCase, userGetterUserCase, userUpdaterUserCase } from '../../../infrastructure/dependencies'
 
 const bootstrap = async (): Promise<void> => {
   const userToCreate: CreateUserDTO = {
@@ -29,6 +29,11 @@ const bootstrap = async (): Promise<void> => {
 
     const newUsers: User[] = await userGetterUserCase.run()
     console.log('List of user', newUsers)
+
+    await userDeleterUseCase.run('1')
+
+    const newListUser: User[] = await userGetterUserCase.run()
+    console.log('User list', newListUser)
   } catch (error) {
     console.log(error)
 
